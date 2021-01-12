@@ -20,7 +20,9 @@ const Clients: React.FC = () => {
     setAlteringClient(result[0])
   }
 
-  const handleSubmit = () => {}
+  const handleSubmit = () => {
+    
+  } 
 
   const handleChange = (clientName: string) => {
     console.log(`Alterando ${clientName}`)

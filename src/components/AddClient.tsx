@@ -42,7 +42,7 @@ const AddClient: React.FC = () => {
     </>
   )*/
 
-  return (<div>Oi Gente</div>)
+  return (<div>Oi Gente</div>);
 }
 
 export default AddClient;

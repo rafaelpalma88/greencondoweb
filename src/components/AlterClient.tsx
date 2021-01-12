@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
-import { IClient } from '../interfaces'
+import React, {useState} from 'react';
+// import {IClient} from '../interfaces';
 
 const AddClient: React.FC = () => {
-
-  /*const [clients, setClients] = useState<IClient[]>([
-    {id: "1", name: "Joao"}, 
-    {id: "2", name: "Jose"}, 
+  /* const [clients, setClients] = useState<IClient[]>([
+    {id: "1", name: "Joao"},
+    {id: "2", name: "Jose"},
     {id: "3", name: "Roberto"}
   ]);
   const [alteringClient, setAlteringClient] = useState<IClient>({id: "1", name: "Joao"});
@@ -38,11 +37,10 @@ const AddClient: React.FC = () => {
         </label>
         <input type="submit" value="Submit" />
       </form>
-    
+
     </>
   )*/
-  return (<div>Oi Gente</div>)
-
-}
+  return (<div>Oi Gente</div>);
+};
 
 export default AddClient;
