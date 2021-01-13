@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export interface IClient {
   id: string;
@@ -7,7 +7,7 @@ export interface IClient {
 }
 
 export interface IClientsState {
-  clients: IClient[];
+  clients: any[];
 }
 
 export interface IContextModel {
@@ -16,5 +16,5 @@ export interface IContextModel {
 }
 
 export type IClientsAction =
-  | { type: 'TESTE'; payload: IClient }
-  | { type: 'REMOVE_USER'; payload: string };  
+  | { type: 'ADD_CLIENT'; payload: IClient }
+  | { type: 'REMOVE_USER'; payload: string };

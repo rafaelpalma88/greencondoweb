@@ -1,8 +1,8 @@
-import React, { useState, useContext } from 'react';
-import { Link } from "react-router-dom";
-import { GlobalContext } from '../context/GlobalState'
+import React, {useState, useContext} from 'react';
+import {Link} from 'react-router-dom';
+import {GlobalContext} from '../context/GlobalState';
 import styled from 'styled-components';
-import { IClient } from '../interfaces'
+import {IClient} from '../interfaces';
 
 const TextLink = styled.a`
   text-decoration: underline;
@@ -10,24 +10,22 @@ const TextLink = styled.a`
 `;
 
 const Clients: React.FC = () => {
-
-  const { clients, removeClient } = useContext(GlobalContext)
+  const {clients, removeClient} = useContext(GlobalContext);
 
   const [alteringClient, setAlteringClient] = useState<IClient | null>(null);
 
   const alterClient = (clientId: string) => {
     const result = clients.filter((client: any )=> client.id === clientId);
-    setAlteringClient(result[0])
-  }
+    setAlteringClient(result[0]);
+  };
 
   const handleSubmit = () => {
-    
-  } 
+
+  };
 
   const handleChange = (clientName: string) => {
-    console.log(`Alterando ${clientName}`)
-
-  }
+    console.log(`Alterando ${clientName}`);
+  };
 
   return (
     <>
@@ -43,7 +41,7 @@ const Clients: React.FC = () => {
           {clients.map((client: any, i: any) => (
             <tr key={client.id}>
               <td>
-                {client.name} posicao {i} 
+                {client.name} posicao {i}
               </td>
               <td><Link to={`/alterclient/${client.id}`}>Alterar Cliente</Link></td>
               <td><TextLink onClick={() => removeClient(client.id)}>Excluir Cliente</TextLink></td>
@@ -63,11 +61,11 @@ const Clients: React.FC = () => {
             </label>
             <input type="submit" value="Submit" />
           </form>
-        
+
         </>
       )}
     </>
-  )
-}
+  );
+};
 
 export default Clients;

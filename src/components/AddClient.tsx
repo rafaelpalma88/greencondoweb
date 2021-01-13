@@ -1,14 +1,19 @@
-import React, { useState } from 'react';
-import { IClient } from '../interfaces'
+import React, {useContext} from 'react';
+// import {IClient} from '../interfaces';
+import {GlobalContext} from '../context/GlobalState';
+import {useHistory} from 'react-router-dom';
 
 const AddClient: React.FC = () => {
+  // const {addUser} = useContext(GlobalContext);
 
-  /*const [clients, setClients] = useState<IClient[]>([
-    {id: "1", name: "Joao"}, 
-    {id: "2", name: "Jose"}, 
+
+  /* const [clients, setClients] = useState<IClient[]>([
+    {id: "1", name: "Joao"},
+    {id: "2", name: "Jose"},
     {id: "3", name: "Roberto"}
   ]);
-  const [alteringClient, setAlteringClient] = useState<IClient>({id: "1", name: "Joao"});
+  const [alteringClient, setAlteringClient] =
+  useState<IClient>({id: "1", name: "Joao"});
 
   const alterClient = (clientId: string) => {
     const result = clients.filter(client => client.id === clientId);
@@ -18,11 +23,21 @@ const AddClient: React.FC = () => {
   const deleteClient = (clientId: string) => {
     const newClientList = clients.filter(client => client.id !== clientId);
     setClients(newClientList)
-  }
+  }*/
 
-  const handleSubmit = () => {}
+  const {addClient} = useContext(GlobalContext);
+  const history = useHistory();
 
-  const handleChange = (clientName: string) => {
+  const handleSubmit = (client: any) => {
+    const newUser = {
+      id: '4',
+      name: 'Rafael Palma',
+    };
+    addClient(newUser);
+    history.push('/');
+  };
+
+  /* const handleChange = (clientName: string) => {
     console.log(`Alterando ${clientName}`)
 
   }
@@ -31,6 +46,12 @@ const AddClient: React.FC = () => {
     <>
       <div>Cliente alterado:</div>
 
+
+    </>
+  )*/
+
+  return (
+    <div>
       <form onSubmit={handleSubmit}>
         <label>
           Nome:
@@ -38,11 +59,8 @@ const AddClient: React.FC = () => {
         </label>
         <button type="submit">Submit</button>
       </form>
-    
-    </>
-  )*/
-
-  return (<div>Oi Gente</div>);
-}
+    </div>
+  );
+};
 
 export default AddClient;

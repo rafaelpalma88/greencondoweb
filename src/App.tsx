@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
-} from "react-router-dom";
-import Clients from './components/Clients' 
-import AddClient from './components/AddClient' 
-import AlterClient from './components/AlterClient' 
-import { GlobalProvider } from './context/GlobalState' 
-
+  Link,
+} from 'react-router-dom';
+import Clients from './components/Clients';
+import AddClient from './components/AddClient';
+import AlterClient from './components/AlterClient';
+import {GlobalProvider} from './context/GlobalState';
 
 
 const App: React.FC = () => {
@@ -37,7 +36,7 @@ const App: React.FC = () => {
               </Route>
               <Route path="/alterclient">
                 <AlterClient />
-            </Route>*
+              </Route>*
               <Route exact path="/">
                 <Clients />
               </Route>
@@ -46,7 +45,7 @@ const App: React.FC = () => {
         </Router>
       </GlobalProvider>
     </>
-  )
-}
+  );
+};
 
 export default App;
