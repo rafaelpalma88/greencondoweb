@@ -1,7 +1,11 @@
 import React from 'react';
 
-const AddClient: React.FC = () => {
-  return (<div>Oi Gente</div>);
+const AlterClient: React.FC = () => {
+  return (
+    <div>
+     Oi Gente
+
+    </div>);
 };
 
-export default AddClient;
+export default AlterClient;

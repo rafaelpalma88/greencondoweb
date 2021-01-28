@@ -3,7 +3,7 @@ import React from 'react';
 export interface IClient {
   id: string;
   name: string;
-  removeClient(): void;
+  // removeClient(): void;
 }
 
 export interface IClientsState {

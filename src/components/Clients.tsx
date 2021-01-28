@@ -1,8 +1,7 @@
-import React, {useState, useContext} from 'react';
+import React, {useContext} from 'react';
 import {Link} from 'react-router-dom';
 import {GlobalContext} from '../context/GlobalState';
 import styled from 'styled-components';
-import {IClient} from '../interfaces';
 
 const TextLink = styled.a`
   text-decoration: underline;
@@ -12,20 +11,6 @@ const TextLink = styled.a`
 const Clients: React.FC = () => {
   const {clients, removeClient} = useContext(GlobalContext);
 
-  const [alteringClient, setAlteringClient] = useState<IClient | null>(null);
-
-  const alterClient = (clientId: string) => {
-    const result = clients.filter((client: any )=> client.id === clientId);
-    setAlteringClient(result[0]);
-  };
-
-  const handleSubmit = () => {
-
-  };
-
-  const handleChange = (clientName: string) => {
-    console.log(`Alterando ${clientName}`);
-  };
 
   return (
     <>
@@ -43,27 +28,20 @@ const Clients: React.FC = () => {
               <td>
                 {client.name} posicao {i}
               </td>
-              <td><Link to={`/alterclient/${client.id}`}>Alterar Cliente</Link></td>
-              <td><TextLink onClick={() => removeClient(client.id)}>Excluir Cliente</TextLink></td>
+              <td>
+                <Link to={`/alterclient/${client.id}`}>Alterar Cliente</Link>
+              </td>
+              <td>
+                <TextLink
+                  onClick={() => removeClient(client.id)}
+                >
+                  Excluir Cliente
+                </TextLink>
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
-
-      {alteringClient && (
-        <>
-          <div>Cliente alterado:</div>
-
-          <form onSubmit={handleSubmit}>
-            <label>
-              Nome:
-              <textarea value={alteringClient.name} onChange={() => handleChange(alteringClient.name)} />
-            </label>
-            <input type="submit" value="Submit" />
-          </form>
-
-        </>
-      )}
     </>
   );
 };

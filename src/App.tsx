@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -28,13 +28,12 @@ const App: React.FC = () => {
               </ul>
             </nav>
 
-            {/* A <Switch> looks through its children <Route>s and
-              renders the first one that matches the current URL. */}
+
             <Switch>
               <Route path="/addclient">
                 <AddClient />
               </Route>
-              <Route path="/alterclient">
+              <Route path="/alterclient/:id">
                 <AlterClient />
               </Route>*
               <Route exact path="/">

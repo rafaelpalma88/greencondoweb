@@ -1,7 +1,6 @@
 import React, {createContext, useReducer} from 'react';
 import AppReducer from './AppReducer';
-// import {IClient, IClientsState,
-// IContextModel, IClientsAction} from '../interfaces';
+import {IClient} from '../interfaces';
 
 // Initial State
 const initialState: any = {
@@ -27,7 +26,7 @@ export const GlobalProvider = ({children}: any ) => {
     });
   };
 
-  const addClient = (client: any): any => {
+  const addClient = (client: IClient): any => {
     dispatch({
       type: 'ADD_CLIENT',
       payload: client,
