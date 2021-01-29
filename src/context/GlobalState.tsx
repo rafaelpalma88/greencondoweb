@@ -4,11 +4,12 @@ import {IClient} from '../interfaces';
 
 // Initial State
 const initialState: any = {
-  clients: [
+  /* clients: [
     {id: '1', name: 'Joao'},
     {id: '2', name: 'Jose'},
     {id: '3', name: 'Roberto'},
-  ],
+  ],*/
+  clients: [],
 };
 
 // Create Context
@@ -26,14 +27,14 @@ export const GlobalProvider = ({children}: any ) => {
     });
   };
 
-  const addClient = (client: IClient): any => {
+  const addClient = (client: IClient): void => {
     dispatch({
       type: 'ADD_CLIENT',
       payload: client,
     });
   };
 
-  const alterClient = (client: IClient): any => {
+  const alterClient = (client: IClient): void => {
     dispatch({
       type: 'ALTER_CLIENT',
       payload: client,

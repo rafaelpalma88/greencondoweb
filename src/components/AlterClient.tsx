@@ -25,7 +25,8 @@ const AlterClient: React.FC<any> = (props) => {
     setSelectedClient(selectedUser);
   }, [clients, currentClientId]);
 
-  const handleSubmit = (client: any) => {
+  const handleSubmit = (event: any) => {
+    event.preventDefault();
     alterClient(selectedClient);
     history.push('/');
   };

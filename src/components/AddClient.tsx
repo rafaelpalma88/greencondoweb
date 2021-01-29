@@ -9,7 +9,8 @@ const AddClient: React.FC = () => {
   const {addClient} = useContext(GlobalContext);
   const history = useHistory();
 
-  const handleSubmit = (client: any) => {
+  const handleSubmit = (event: any) => {
+    event.preventDefault();
     const newUser = {
       id: uuid(),
       name,
@@ -19,6 +20,8 @@ const AddClient: React.FC = () => {
   };
 
   const changeName = (e: any) => {
+    // console.log('e', e);
+    // console.log('typeof e', typeof e);
     setName(e.target.value);
   };
 

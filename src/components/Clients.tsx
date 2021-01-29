@@ -2,6 +2,7 @@ import React, {useContext} from 'react';
 import {Link} from 'react-router-dom';
 import {GlobalContext} from '../context/GlobalState';
 import styled from 'styled-components';
+import {IClient} from '../interfaces';
 
 const TextLink = styled.a`
   text-decoration: underline;
@@ -25,7 +26,7 @@ const Clients: React.FC = () => {
               </tr>
 
               <>
-                {clients.map((client: any, i: any) => (
+                {clients.map((client: IClient, i: number) => (
                   <tr key={client.id}>
                     <td>
                       {client.name} posicao {i}
