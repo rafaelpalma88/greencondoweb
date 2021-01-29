@@ -33,11 +33,19 @@ export const GlobalProvider = ({children}: any ) => {
     });
   };
 
+  const alterClient = (client: IClient): any => {
+    dispatch({
+      type: 'ALTER_CLIENT',
+      payload: client,
+    });
+  };
+
   return (
     <GlobalContext.Provider value={{
       clients: state.clients,
       removeClient,
       addClient,
+      alterClient,
     }}>
       {children}
     </GlobalContext.Provider>

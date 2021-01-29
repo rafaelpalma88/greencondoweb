@@ -35,7 +35,7 @@ const App: React.FC = () => {
               </Route>
               <Route path="/alterclient/:id">
                 <AlterClient />
-              </Route>*
+              </Route>
               <Route exact path="/">
                 <Clients />
               </Route>
